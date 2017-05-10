@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Max</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+var num1=10;
+var num2=20;
+var result;
+result=max(num1,num2);
+
+function max(num1,num2){
+	if(num1>num2){
+		return(num1);
+	}
+	else{
+	return(num2);
+	}
+}	
+document.getElementById('demo').innerHTML=result;
+</script>
+</body>
+</html>

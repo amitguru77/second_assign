@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array</title>
+</head>
+<body>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+var arr=[1,2,3,4];
+var add_result=add(arr);
+var mul_result=multiply(arr);
+function add(arr){
+	var temp=0;
+	for (var i = 0; i < arr.length; i++) {
+		temp+=arr[i];
+	}
+	return(temp);
+}
+function multiply(arr){
+	var temp=1;
+	for (var i = 0; i < arr.length; i++) {
+		temp*=arr[i];
+		}
+		return(temp);
+}
+document.getElementById('demo1').innerHTML="Array Addition Result="+add_result;
+document.getElementById('demo2').innerHTML="Array Multiply Result"+mul_result;
+</script>
+</body>
+</html>

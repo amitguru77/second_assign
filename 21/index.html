@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array test</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+	var arr=['this','is','a','table'];
+	var int=2;
+	var result=filterLongWords(arr,int);
+	function filterLongWords(arr,i){
+		var temp="";
+		for (var i = 0; i < arr.length; i++) {
+			if(arr[i].length>int) {
+				temp=temp+arr[i]+"<br/>";
+			}
+		}
+	return(temp);
+	}
+	document.getElementById('demo').innerHTML=result;
+</script>
+</body>
+</html>

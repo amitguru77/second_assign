@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Frequency</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>	
+	var result=charFreq("abbabcbdbabdbdbabababcbcbab");
+	function charFreq(arr){
+	var str=arr.split("");
+	var temp=[];
+	var char='';	
+	for (var i = 0; i < str.length; i++) {
+		char=str[i];
+		if (temp.indexOf(char)!=-1) {
+		} 
+		else{
+			temp.push(char);
+		}
+	}
+	for (var j = 0; j < temp.length; j++) {
+		char=temp[j];
+		var count=0;
+		for (var k = 0; k < str.length; k++) {
+			if (char==str[k]) {
+				count++;
+			}
+		}
+		document.write("<p>"+ char + " -> " + count+ "</p>" );
+	}
+	}	
+</script>
+</body>
+</html>

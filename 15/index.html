@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>using prompt</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>	
+	var result="";
+	var char=prompt("Please Enter a Character:");
+	if (char.length>1) {
+		alert("Please Enter Single Character");
+		location.reload();
+	}
+	else{
+
+	switch(char)
+	{
+		case 'a':
+			result="true";
+			break;
+		case 'e':
+			result="true";
+			break;
+		case 'i':
+			result="true";
+			break;
+		case 'o':
+			result="true";
+			break;
+		case 'u':
+			result="true";
+			break;
+		default:
+			result="false";
+			break;
+	}
+	document.getElementById('demo').innerHTML=result;
+	}
+	
+</script>
+</body>
+</html>

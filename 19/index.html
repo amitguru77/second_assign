@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cristmas Card</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+var translate = {
+     "merry":"god", 
+     "christmas":"jul", 
+     "and":"och", 
+     "happy":"gott", 
+     "new":"nytt", 
+     "year":"år"     
+};
+var word=prompt("which word do you want to translate?");
+var result=translate[word]||word;
+document.getElementById('demo').innerHTML=result;
+	
+</script>
+</body>
+</html>

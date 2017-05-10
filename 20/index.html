@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>longest</title>
+</head>
+<body>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+	var arr=['welcome', 'to','selfistan'];
+	var max=findLongestWord(arr);
+	function findLongestWord(arr){
+		var len=0;
+		var index=0;		
+		for (var i = 0; i < arr.length; i++) {
+				if (arr[i].length>len) {
+				len=arr[i].length;
+				index=i;
+				}
+			}
+		document.getElementById('demo2').innerHTML="word is: "+ arr[index];
+		return(len);
+	}
+	document.getElementById('demo1').innerHTML="longest length of word is :"+max;	
+</script>
+</body>
+</html>

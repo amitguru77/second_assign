@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>rövarspråket</title>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+	var vowel=["a","e","i","o","u"," "];
+	var text=prompt("Please Enter the Text:");
+	var result="";
+	var final_result=translate(text);
+	function translate(text)
+		{
+			var char="";
+			for (var temp= 0; temp< text.length; temp++) {
+				char=text[temp];
+				if (vowel.indexOf(char)!= -1) {
+					
+					result=result+char;
+				}
+				else
+				{
+					result=result+char+"o"+char;	
+				}
+			}
+			return(result);
+		}
+	document.getElementById('demo').innerHTML=final_result;
+</script>
+
+</body>
+</html>
