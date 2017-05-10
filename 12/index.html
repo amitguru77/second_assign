@@ -4,17 +4,26 @@
 	<title>Digital Clock</title>
 </head>
 <body>
-<p></p>
+<p id="demo"></p>
 
 <script>
-	// var d= new Date().toLocaleTimeString();
-	// var hh=d.getHours();
-	// var mm=d.getMinutes();
-	// var ss=d.getSeconds();
-	// document.write(d);
-	// var time=Date.now();
-	// document.write(time);
-	
+setInterval(digitalClock,500);
+function digitalClock(){
+	 var d= new Date();
+	var hh=d.getHours();
+	var mm=d.getMinutes();
+	var ss=d.getSeconds();
+	if(hh<10){
+		hh="0"+hh;
+	}
+	if (mm<10) {
+		mm="0"+mm;
+	}
+	if (ss<10) {
+		ss="0"+ss;
+	}
+	document.getElementById('demo').innerHTML=hh+":" +mm +":"+ss;
+}	
 </script>
 </body>
 </html>
