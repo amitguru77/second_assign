@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic Table</title>
+	<style>
+		table{
+			border:1px solid black;
+			border-collapse: collapse;
+			margin-top: 2%;
+			margin-left: 20%;
+		}
+		tr,td,th{
+			border:1px solid black ;
+			width: 245px;
+		}
+		.button1{
+			margin-top: 10%;
+			margin-left: 43%;
+			width: 150px;
+			height: 30px;
+			color: rgb(0,0,0);
+			font-weight: bold;	
+		}
+		#save{
+			width: 150px;
+		}		
+	</style>
+</head>
+<body>
+<button type="button" class="button1" onclick="addRow()">Add Row</button>
+<table id="tableId">
+	<tr>
+		<th>
+			Name
+		</th>
+		<th>
+			Email
+		</th>
+		<th>
+			Action
+		</th>
+	</tr>	
+</table>
+<script>
+		function addRow(){		
+		var table=document.getElementById('tableId');
+		var existRow=table.rows.length;
+		var num=existRow;
+		var newRow=table.insertRow(num);
+		var cell1=newRow.insertCell(0);
+		var cell2=newRow.insertCell(1);
+		var cell3=newRow.insertCell(2);
+		var n=num;
+		cell1.innerHTML=" <input type='text' name='Name' id='name"+n+"' placeholder='Name'>";
+		cell2.innerHTML="<input type='text' name='Email' id='email"+n+"' placeholder='Email'>";
+		cell3.innerHTML="<button type='button' id='save"+n+"' onclick='save(this)' > Save</button>";
+		}
+
+	function save(n){
+		var num=n.parentElement.parentElement.rowIndex;		
+		var name= document.getElementById("name"+num).value;
+		var email=document.getElementById("email"+num).value;
+		var x=document.getElementById('tableId').rows[num].cells;
+		x[0].innerHTML=name;
+		x[1].innerHTML=email;		
+		x[2].innerHTML="<button type='button'  id='edit"+num+"' onclick='edit(this)' > Edit</button> <button type='button' id='del"+num+"' onclick='del(this)' > Delete</button>";						
+	}
+
+	function edit(n){		
+		var num=n.parentElement.parentElement.rowIndex;		
+		var name=document.getElementById('tableId').rows[num].cells[0].innerHTML;
+		var email=document.getElementById('tableId').rows[num].cells[1].innerHTML;			
+		var x=document.getElementById('tableId').rows[num].cells;
+		x[0].innerHTML=" <input type='text' name='Name' id='name"+num+"' value='"+name+"'>";
+		x[1].innerHTML="<input type='text' name='Email' id='email"+num+"' value='"+email+"'>";
+		x[2].innerHTML="<button type='button' id='save"+num+"' onclick='save(this)' > Save</button>";
+	}
+	function del(n){
+		var num=n.parentElement.parentElement.rowIndex;
+		alert("Delete"+num);
+		document.getElementById('tableId').deleteRow(num);
+	}	
+</script>
+</body>
+</html>
