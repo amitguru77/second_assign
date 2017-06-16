@@ -14,8 +14,13 @@ var translate = {
      "new":"nytt", 
      "year":"år"     
 };
-var word=prompt("which word do you want to translate?");
-var result=translate[word]||word;
+var sentence=prompt("Write down to translate your sentence");
+var split_sentence= sentence.split(" ");
+var result="";
+for (var i = 0; i < split_sentence.length; i++) {
+	result +=(translate[split_sentence[i]]||split_sentence[i] ) + " ";
+}
+
 document.getElementById('demo').innerHTML=result;
 	
 </script>
